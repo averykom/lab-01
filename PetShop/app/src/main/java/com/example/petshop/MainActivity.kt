@@ -16,40 +16,14 @@ import com.example.petshop.ui.theme.PetShopTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            PetShopTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val cat = Cat("Coco", 6)
-                    val dog = Dog("Mochi", 6)
-                    val scorpion = Scorpion("Stinger", 32)
-                    val pets = mutableListOf(cat, dog, scorpion)
 
-                    val pettablePets = mutableListOf<Pettable>()
-                    pettablePets.add(cat)
-                    pettablePets.add(dog)
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        val cat = Cat("Coco", 6)
+        val dog = Dog("Mochi", 6)
+        val scorpion = Scorpion("Stinger", 32)
+        val pets = mutableListOf(cat, dog, scorpion)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PetShopTheme {
-        Greeting("Android")
+        val pettablePets = mutableListOf<Pettable>()
+        pettablePets.add(cat)
+        pettablePets.add(dog)
     }
 }
